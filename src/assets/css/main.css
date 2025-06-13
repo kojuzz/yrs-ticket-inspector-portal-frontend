@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --var-theme: linear-gradient(90deg, #3CACB6 0%, #8CCEAD 90%);
+    --van-primary-color: var(var(--var-theme)) !important;
+    --van-nav-bar-background: var(--var-theme) !important;
+    --van-nav-bar-title-text-color: #fff !important;
+    --van-nav-bar-text-color: #fff !important;
+    --van-nav-bar-z-index: 1000 !important;
+    --van-cell-label-margin-top: 0px !important;
+    --van-nav-bar-icon-color: #fff !important;
+    --van-tabs-bottom-bar-color: #1CBC9B !important;
+    --van-step-active-color: #1CBC9B !important;
+    --van-step-text-color: #1CBC9B !important;
+    --van-step-icon-size: 20px !important;
+    --van-cell-horizontal-padding: 10px !important;
+}
+
+.van-tabs--line .van-tabs__wrap {
+    border-radius: 10px !important;
+}
+
+.van-step--vertical .van-step__circle-container {
+    top: 28px !important;
+}
