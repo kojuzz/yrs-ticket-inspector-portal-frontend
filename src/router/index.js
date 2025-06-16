@@ -29,6 +29,12 @@ const router = createRouter({
             meta: { showTabBar: false }
         },
         {
+            path: '/change-password',
+            name: 'change-password',
+            component: () => import('../views/ChangePasswordView.vue'),
+            meta: { showTabBar: false, requiresAuth: true }
+        },
+        {
             path: '/two-step-verification',
             name: 'two-step-verification',
             component: () => import('../views/TwoStepVerificationView.vue'),

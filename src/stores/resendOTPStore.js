@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import axiosInstance from '@/axiosInstance'
 
-export const useTwoStepVerificationStore = defineStore("twoStepVerificationStore", {
+export const useResendOTPStore = defineStore("resendOTPStore", {
     state: () => ({ 
         response: null, 
         error: null,
@@ -15,11 +15,10 @@ export const useTwoStepVerificationStore = defineStore("twoStepVerificationStore
         getErrors: (state) => state.errors,
     },
     actions: {
-        async store(otp_token, code) {
+        async store(otp_token) {
             try {
-                let response = await axiosInstance.post(`ticket-inspector-portal/two-step-verification`, { 
+                let response = await axiosInstance.post(`ticket-inspector-portal/resend-otp`, { 
                     otp_token: otp_token,
-                    code: code,
                  });
                 this.response = response.data ?? null;
                 this.error = null;
