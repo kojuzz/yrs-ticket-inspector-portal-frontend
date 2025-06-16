@@ -3,10 +3,18 @@ import 'vant/lib/index.css';
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { Tabbar, TabbarItem, NavBar, List, PullRefresh, Cell, CellGroup, Search, Button, TextEllipsis, Tab, Tabs, Empty, Grid, GridItem, Icon, Step, Steps, Dialog, Popup, Picker, Field } from 'vant';
+import { Tabbar, TabbarItem, NavBar, List, PullRefresh, Cell, CellGroup, Search, Button, TextEllipsis, Tab, Tabs, Empty, Grid, GridItem, Icon, Step, Steps, Dialog, Popup, Picker, Field, Form, PasswordInput, NumberKeyboard, Tag } from 'vant';
 
 import App from './App.vue'
 import router from './router'
+import SecureLs from "secure-ls";
+
+
+window.ls = new SecureLs({
+    encodingType: import.meta.env.VITE_LS_ENCODING_TYPE,
+    encryptionSecret: import.meta.env.VITE_LS_ENCRYPTION_SECRET,
+    metaKey: import.meta.env.VITE_LS_META_KEY,
+});
 
 const app = createApp(App)
 
@@ -34,6 +42,10 @@ app.use(Dialog);
 app.use(Popup);
 app.use(Picker);
 app.use(Field);
+app.use(Form);
+app.use(PasswordInput);
+app.use(NumberKeyboard);
+app.use(Tag);
 
 app.use(router);
 

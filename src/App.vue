@@ -5,9 +5,8 @@
             <RouterView />
         </div>
         <van-tabbar v-model="active" v-if="showTabBar" active-color="#1CBC9B">
-            <van-tabbar-item icon="home-o" to="/">Tab</van-tabbar-item>
-            <van-tabbar-item icon="exchange" to="/route">Route</van-tabbar-item>
-            <van-tabbar-item icon="shop-o" to="/station">Station</van-tabbar-item>
+            <van-tabbar-item icon="home-o" to="/">Home</van-tabbar-item>
+            <van-tabbar-item icon="list-switch" to="/ticket-inspection">Ticket Inspection</van-tabbar-item>
             <van-tabbar-item icon="contact-o" to="/profile">Profile</van-tabbar-item>
         </van-tabbar>
     </div>
@@ -28,9 +27,8 @@
         (newPath) => {
             switch (newPath) {
                 case '/': active.value = 0; break;
-                case '/route': active.value = 1; break;
-                case '/station': active.value = 2; break;
-                case '/profile': active.value = 3; break;
+                case '/ticket-inspection': active.value = 1; break;
+                case '/profile': active.value = 2; break;
                 default: active.value = null;
             }
         }
