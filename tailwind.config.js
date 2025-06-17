@@ -5,13 +5,13 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                theme: "linear-gradient(90deg, #3CACB6 0%, #8CCEAD 90%)",
+                theme: "linear-gradient(90deg, #3c57b6 0%, #948cce 90%)",
             },
             borderColor: {
-                theme: "#1CBC9B",
+                theme: "#3c57b6",
             },
             textColor: {
-                theme: "#1CBC9B",
+                theme: "#3c57b6",
             },
         },
     },

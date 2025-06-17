@@ -42,7 +42,7 @@
                     block
                     type="primary"
                     native-type="submit"
-                    color="#1CBC9B"
+                    color="#3c57b6"
                     :loading="submitBtnLoading"
                 >
                     Confirm

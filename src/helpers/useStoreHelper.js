@@ -1,7 +1,7 @@
-import { useRouteStore } from "@/stores/routeStore";
+import { useTicketInspectionStore } from "@/stores/ticketInspectionStore";
 
 const stores = {
-    routeStore: useRouteStore()
+    ticketInspectionStore: useTicketInspectionStore()
 };
 
 const useStoreHelper = (storeName) => {

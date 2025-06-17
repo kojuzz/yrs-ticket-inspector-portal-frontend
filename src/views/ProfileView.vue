@@ -85,7 +85,7 @@ const onLogout = async () => {
         message: "Are you sure you want to logout?",
         cancelButtonText: "Cancel",
         confirmButtonText: "Confirm",
-        confirmButtonColor: "#1CBC9B",
+        confirmButtonColor: "#3c57b6",
     })
         .then(async () => {
             await logoutStore.store();

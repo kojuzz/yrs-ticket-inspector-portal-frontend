@@ -10,7 +10,7 @@
                 <div>
                     <h5 class="text-left text-white text-xs mb-0">YRS</h5>
                     <p class="text-left text-white text-xs mb-0">
-                        Yangon Railway Service
+                        Ticket Inspector Portal
                     </p>
                 </div>
             </div>

@@ -4,7 +4,7 @@
         <div class="bg-gray-100 min-h-screen pb-10">
             <RouterView />
         </div>
-        <van-tabbar v-model="active" v-if="showTabBar" active-color="#1CBC9B">
+        <van-tabbar v-model="active" v-if="showTabBar" active-color="#3c57b6">
             <van-tabbar-item icon="home-o" to="/">Home</van-tabbar-item>
             <van-tabbar-item icon="list-switch" to="/ticket-inspection">Ticket Inspection</van-tabbar-item>
             <van-tabbar-item icon="contact-o" to="/profile">Profile</van-tabbar-item>

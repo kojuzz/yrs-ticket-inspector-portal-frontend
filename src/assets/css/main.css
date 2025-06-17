@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-    --var-theme: linear-gradient(90deg, #3CACB6 0%, #8CCEAD 90%);
-    --van-primary-color: var(var(--var-theme)) !important;
-    --van-nav-bar-background: var(--var-theme) !important;
+    --van-theme: linear-gradient(90deg, #3c57b6 0%, #948cce 90%);
+    --van-primary-color: var(--van-theme) !important;
+    --van-nav-bar-background: var(--van-theme) !important;
     --van-nav-bar-title-text-color: #fff !important;
     --van-nav-bar-text-color: #fff !important;
     --van-nav-bar-z-index: 1000 !important;
     --van-cell-label-margin-top: 0px !important;
     --van-nav-bar-icon-color: #fff !important;
-    --van-tabs-bottom-bar-color: #1CBC9B !important;
-    --van-step-active-color: #1CBC9B !important;
-    --van-step-text-color: #1CBC9B !important;
+    --van-tabs-bottom-bar-color: #3c57b6 !important;
+    --van-step-active-color: #3c57b6 !important;
+    --van-step-text-color: #3c57b6 !important;
     --van-step-icon-size: 20px !important;
     --van-cell-horizontal-padding: 10px !important;
 }
