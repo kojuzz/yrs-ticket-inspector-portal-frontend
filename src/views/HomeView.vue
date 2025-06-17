@@ -41,6 +41,7 @@
                     placeholder="Select Route"
                     @click="routeFieldClick"
                     class="border rounded-lg"
+                    :error-message="errors.route_slug"
                 />
                 <van-popup v-model:show="showRoutePicker" position="bottom">
                     <van-picker
@@ -86,7 +87,7 @@
                 v-if="showQRScanner"
                 :track="paintBoundingBox"
                 @detect="onScanDetect"
-                @error="onScanError"
+                :paused="paused"
             ></qrcode-stream>
         </div>
     </van-dialog>
@@ -115,6 +116,10 @@ const showRoutePicker = ref(false);
 
 const showDialog = ref(false);
 const showQRScanner = ref(false);
+const paused = ref(false);
+const errors = ref({
+    route_slug: "",
+});
 
 const successSound = ref(null);
 const errorSound = ref(null);
@@ -181,8 +186,6 @@ const onScanClose = () => {
     showQRScanner.value = false;
 };
 
-const onScanError = () => {};
-
 const onScanDetect = async (detectedCode) => {
     try {
         const result = detectedCode.map((code) => code.rawValue);
@@ -192,10 +195,13 @@ const onScanDetect = async (detectedCode) => {
         await inspectTicketStore.store(routeSlug.value, result[0]);
         if(inspectTicketStore.getErrorMessage) {
             if (inspectTicketStore.getErrors) {
-                if(inspectTicketStore.getErrors.route_slug) {
-                    throw new Error(inspectTicketStore.getErrors.route_slug.join(", "));
-                }
+                errors.value = {
+                    route_slug: inspectTicketStore.getErrors.route_slug
+                        ? inspectTicketStore.getErrors.route_slug.join(", ")
+                        : "",
+                };
             }
+            errorSound.value.play();
         } else {
             successSound.value.play();
             showNotify({
@@ -212,6 +218,10 @@ const onScanDetect = async (detectedCode) => {
             position: "bottom",
         });
     }
+    paused.value = true
+    setTimeout(() => {
+        paused.value = false
+    }, 500)
 };    
 
 </script>
