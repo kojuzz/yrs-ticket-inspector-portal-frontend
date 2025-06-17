@@ -9,7 +9,6 @@ import App from './App.vue'
 import router from './router'
 import SecureLs from "secure-ls";
 
-
 window.ls = new SecureLs({
     encodingType: import.meta.env.VITE_LS_ENCODING_TYPE,
     encryptionSecret: import.meta.env.VITE_LS_ENCRYPTION_SECRET,
